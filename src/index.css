@@ -20,7 +20,7 @@ body{
 }
 
 .btn-pry{
-  background-color: rgb(202, 137, 4);
+  background-color: #151414;
   padding: 2px 9px ;
   border-radius: 2px;
   font-size: 1rem;
@@ -28,7 +28,20 @@ body{
 margin-left: 4px;
 /* font-family: "Poppins", sans-serif; */
 font-weight: 400;
+border: 1px solid white;
+cursor: pointer;
+transition: background-color 0.3s ease;
 
+}
+.btn-pry:hover{
+  background-color: #807979;
+  border: 1px solid rgb(28, 24, 24);
+ 
+}
+.btn-pry:active{
+ 
+  transform: scale(0.95);
+  transition: 200ms;
 }
 
 

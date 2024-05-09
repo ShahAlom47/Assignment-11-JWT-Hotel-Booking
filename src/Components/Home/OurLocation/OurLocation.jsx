@@ -7,7 +7,7 @@ const OurLocation = () => {
             backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.0), rgba(0,4,4,20)), url('https://i.ibb.co/Bt2XcRn/sara-dubler-Koei-7-Yt-Io-unsplash-1-1.jpg')" 
         }}>
         
-          <div className="flex gap-4 lg:flex-row md:flex-row flex-col   max-w  border-gray-600  rounded-md p-0">
+          <div className="flex gap-4 lg:flex-row md:flex-row flex-col-reverse   max-w  border-gray-600  rounded-md p-0">
              <Map  height={300} defaultCenter={[24.8862, 91.8813]} defaultZoom={11}>
                 <Marker width={100} anchor={[24.8862, 91.8813]} />
             </Map>
