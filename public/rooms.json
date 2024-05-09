@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "description": "Deluxe Double Room with Sea View",
+    "price_per_night": 150,
+    "room_size": "350 sq ft",
+    "availability": true,
+    "images": [
+      "image1.jpg",
+      "image2.jpg",
+      "image3.jpg"
+    ],
+    "special_offers": "Stay 3 nights, pay for 2!",
+    "reviews": [
+      {
+        "id": 1,
+        "user": "John Doe",
+        "comment": "Excellent room with breathtaking view!"
+      },
+      {
+        "id": 2,
+        "user": "Jane Smith",
+        "comment": "Great value for money!"
+      }
+    ]
+}
