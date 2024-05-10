@@ -40,7 +40,7 @@ const logoutHandel = () => {
 }
 
 
-console.log(user);
+// console.log(user);
 
 
 const nav = <>
