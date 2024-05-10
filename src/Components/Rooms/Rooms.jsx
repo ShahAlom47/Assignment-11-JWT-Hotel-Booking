@@ -14,7 +14,7 @@ const Rooms = () => {
         axiosSecure.get((`/all-rooms?sort=${sortValu}&max=${filterValue?.maxNo}&min=${filterValue?.minNo}`))
             .then(data => setRoomsData(data?.data))
 
-    }, [axiosSecure, sortValu,filterValue])
+    }, [axiosSecure, sortValu, filterValue])
 
     function handleMouseOver(index) {
         setHoveredIndex(index);
@@ -45,9 +45,9 @@ const Rooms = () => {
                     <div>
                         <form onSubmit={handelFilter} className="flex gap-4 " >
 
-                            <input className="px-2 rounded-sm w-20 border border-slate-800" type="number" name="min" id="" placeholder="Minimum Price"  />
+                            <input className="px-2 rounded-sm w-20 border border-slate-800" type="number" name="min" id="" placeholder="Minimum Price" />
 
-                            <input className=" border border-slate-800 px-2 rounded-sm w-20" type="number" name="max" id="" placeholder="Maximum Price"  />
+                            <input className=" border border-slate-800 px-2 rounded-sm w-20" type="number" name="max" id="" placeholder="Maximum Price" />
                             <input type="submit" value="Filter" className="btn btn-sm mx-1 hover:text-gray-900  text-gray-50  rounded-lg border-none border-b-2 bg-slate-800   " />
                         </form>
                     </div>
@@ -78,10 +78,17 @@ const Rooms = () => {
                                         onMouseOver={() => handleMouseOver(index)}
                                         onMouseOut={handleMouseOut}
                                         className="  w-full  relative  image-full rounded-sm h-60 overflow-hidden  duration-300  bg-none p-0">
-                                        <figure className="w-full h-full"><img
+                                        <figure className="w-full h-full relative"><img
                                             style={{ transition: 'transform 0.9s ease', transform: hoveredIndex === index ? 'scale(1.20)' : 'scale(1)' }}
 
-                                            className="rounded-md w-full h-full" src={data.image} alt="Shoes" /></figure>
+                                            className="rounded-md w-full h-full" src={data.image} alt="Shoes" />
+                                            {
+                                                data?.special_offers ? <div className="bg-yellow-600 absolute 0 left-2 top-0 p-5   rounded-b-full ">
+                                                    <p className="text-3xl font-bold  text-center ">OFFER</p>
+                                                    {/* <p className="text-center font-semibold ">{data?.special_offers}</p> */}
+                                                </div> : <></>
+                                            }
+                                        </figure>
                                         <p className="top-1 right-1 absolute">
                                             {
 
@@ -100,7 +107,7 @@ const Rooms = () => {
                                             <h2 className="  font-semibold text-gray-900 ">$ {data.price_per_night} /NIGHT </h2>
                                             <Link><h1 className="text-gray-100 btn btn-sm bg-gray-800 hover:text-gray-800"> View Review: {data.reviews?.length}</h1></Link>
 
-                                            <button className=" btn-active btn absolute bg-gray-700 hover:text-black pr-16 border rounded-l-full -right-2 bottom-4  text-gray-50 p-3">View Details</button>
+                                            <Link to={`/room-details/${data._id}`}>   <button className=" btn-active btn absolute bg-gray-700 hover:text-black pr-16 border rounded-l-full -right-2 bottom-4  text-gray-50 p-3">View Details</button></Link>
                                         </div>
                                     </div>
 
