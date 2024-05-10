@@ -46,7 +46,7 @@ transition: background-color 0.3s ease;
 
 .btn-active:active{
   transition:  0.4s ease;
-  transform: translateX(15);
+  transform: translateX(12);
 
 right: -10%;
 
