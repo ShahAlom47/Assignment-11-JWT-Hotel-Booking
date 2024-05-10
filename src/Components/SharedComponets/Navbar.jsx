@@ -40,12 +40,12 @@ const logoutHandel = () => {
 }
 
 
-
+console.log(user);
 
 
 const nav = <>
 <NavLink><li><a>Home</a></li></NavLink>
-<NavLink><li><a>Rooms</a></li></NavLink>
+<NavLink to={'/rooms'}><li><a>Rooms</a></li></NavLink>
 <NavLink><li><a>My Bookings</a></li></NavLink>
 <NavLink><li><a>About Us</a></li></NavLink>
 <NavLink><li><a>Contact Us</a></li></NavLink>
@@ -54,10 +54,30 @@ const nav = <>
 </>
 
 const btn=<>
-<p>{user?.email}</p>
-<Link to={'/login'}> <button className="btn-pry">SignIn</button></Link>
-<Link to={'/register'}> <button className="btn-pry">SignUp</button></Link>
- <button onClick={logoutHandel} className="btn-pry">LogOut</button>
+{
+    user?<> <div className="dropdown dropdown-end">
+    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div className="w-10 rounded-full border">
+        <img alt="Tailwind CSS Navbar component" src={user?.photoURL}/>
+      </div>
+    </div>
+    <ul tabIndex={0} className=" text-gray-700 mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      <li>
+        <a className="justify-between border-b-2">{user?.displayName}</a>
+        <a className="justify-between  border-b-2">{user?.email}</a>
+      </li>
+
+      <li><a className=" border-b-2 bg-gray-200"><button onClick={logoutHandel} className="" >LogOut</button></a></li>
+    </ul>
+  </div></>:<><Link to={'/login'}> <button className="btn-pry">SignIn</button></Link>
+    <Link to={'/register'}> <button className="btn-pry">SignUp</button></Link></>
+}
+
+
+ 
+
+
+
 </>
     return (
         <div className={` border-b- shadow-md shadow-white  bg-gradient-to-t from-[#00000000] to-[#0000004f]  w-full m-auto" p-0  z-50 fixed  ${visible ? 'top-0 transition-all' : '-top-20 transition-all'} duration-1000`} >
@@ -79,7 +99,7 @@ const btn=<>
                         {nav}
                     </ul>
                 </div>
-                <div className="navbar-end uppercase">
+                <div className="navbar-end ">
                    {
                     btn
                    }
