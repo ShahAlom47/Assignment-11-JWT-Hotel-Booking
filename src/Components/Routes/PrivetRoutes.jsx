@@ -3,7 +3,8 @@ import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import PropTypes from 'prop-types'; // ES6
 import { useLocation } from 'react-router-dom';
-import { AuthContext } from "../Auth Provider/AuthProbider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 
 
 const PrivetRoute = ({children}) => {

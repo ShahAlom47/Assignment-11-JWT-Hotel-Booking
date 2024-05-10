@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'; // ES6
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 import auth from "../../firebase.config";
+import axios from "axios";
 
 
 
@@ -58,12 +59,39 @@ const AuthProvider  = ({children}) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-         
+            const logOutUser = currentUser?.email || user?.email
+            const userEmail= {email:currentUser?.email}
             setUser(currentUser);
             setLoading(false);
+
+
+            if(currentUser){
+                axios.post('http://localhost:5000/jwt', userEmail,{withCredentials:true})
+                  .then(function (response) {
+                    console.log(response.data);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+
+               
+            }
+          else{
+            axios.post('http://localhost:5000/jwt/logout', logOutUser,{withCredentials:true})
+                  .then(function (response) {
+                    console.log('logout ',response.data);
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+
+          }
+           
+       
+
         });
         return () => unSubscribe
-    }, [loading])
+    }, [loading,user])
 
 
     const AuthInfo={user,userLogin, userRegister, userLogOut, updateUserProfile,updateUserName, githubLogin,googleLogin,loading}
