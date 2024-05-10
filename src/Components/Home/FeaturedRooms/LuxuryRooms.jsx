@@ -29,12 +29,13 @@ const LuxuryRooms = () => {
             </div>
             <div className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
                 {
-                    rooms.map((data, index) => <div key={data._id} className="  rounded-sm shadow-2xl shadow-gray-500">
+                    rooms?.map((data, index) => <div key={data._id}
+                     className={`  rounded-lg `}>
 
                         <div
                             onMouseOver={() => handleMouseOver(index)}
                             onMouseOut={handleMouseOut}
-                            className="  w-full  relative  image-full rounded-sm h-60 overflow-hidden  duration-300 btn bg-none p-0">
+                            className="  w-full  relative  image-full rounded-sm h-60 overflow-hidden  duration-300  bg-none p-0">
                             <figure className="w-full h-full"><img
                                 style={{ transition: 'transform 0.9s ease', transform: hoveredIndex === index ? 'scale(1.20)' : 'scale(1)' }}
 
@@ -47,7 +48,7 @@ const LuxuryRooms = () => {
                                  
                                 <h2 className="card-title mb-8 font-semibold text-gray-100 ">$ {data.price_per_night} /NIGHT </h2>
 
-                                <button className="btn absolute bg-gray-700 pr-16 border-none rounded-l-full -right-2 bottom-10  text-gray-50 p-3">Book Now</button>
+                                <button className=" btn-active btn absolute bg-gray-700 hover:text-black pr-16 border-none rounded-l-full -right-2 bottom-10  text-gray-50 p-3">Book Now</button>
                             </div>
                         </div>
                     </div>
