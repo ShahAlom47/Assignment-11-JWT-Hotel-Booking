@@ -62,38 +62,17 @@ const Register = () => {
         userRegister(email, password)
             .then(() => {
 
-
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photo
                 }).then(() => {
+                    toast.success('User created successfully ')
+                    setSuccessMsg('User created successfully')
+                    setTimeout(() => { navigate(location.state ? location.state : '/') }, 1500)
                   
 
                 }).catch((error) => {
                     setErrorMsg(error.message)
-                });
-
-
-
-                fetch('https://assaignment-10-server-sage.vercel.app/user', {
-
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(FormDatas),
-                })
-
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.insertedId) {
-
-                            toast.success('User created successfully ')
-                            setSuccessMsg('User created successfully')
-                            setTimeout(() => { navigate(location.state ? location.state : '/') }, 1500)
-                        }
-                    })
-
-
+                });      
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -107,31 +86,13 @@ const Register = () => {
 
     const googleLoginHandel = () => {
         googleLogin()
-            .then((data) => {
-                const name= data.user?.displayName
-                const email=data.user?.email
-                const photo=data.user?.photoURL
-                const FormDatas = {name,email,photo, }
-
-                fetch('https://assaignment-10-server-sage.vercel.app/user', {
-
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(FormDatas),
-            })
-
-                .then(res => res.json())
-                .then(data => {
-                    if (data.insertedId) {
+            .then(() => {
+              
 
                         toast.success('Login Successfully ')
                         setSuccessMsg('Login Successfully')
                         setTimeout(() => { navigate(location.state ? location.state : '/') }, 1500)
-                    }
-                })
- 
+                 
             })
             .catch((error) => {
                 setErrorMsg(error.message)
@@ -141,31 +102,12 @@ const Register = () => {
     }
     const githubLoginHandel = () => {
         githubLogin()
-        .then((data) => {
-            const name= data.user?.displayName
-            const email=data.user?.email
-            const photo=data.user?.photoURL
-            const FormDatas = {name,email,photo, }
-
-            fetch('https://assaignment-10-server-sage.vercel.app/user', {
-
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(FormDatas),
-        })
-
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-
+        .then(() => {
+          
                     toast.success('Login Successfully ')
                     setSuccessMsg('Login Successfully')
                     setTimeout(() => { navigate(location.state ? location.state : '/') }, 1500)
-                }
-            })
-
+         
         })
         .catch((error) => {
             setErrorMsg(error.message)

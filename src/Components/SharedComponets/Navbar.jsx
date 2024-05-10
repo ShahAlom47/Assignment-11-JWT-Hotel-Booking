@@ -31,6 +31,15 @@ useEffect(() => {
 }, [visible]);
 
 
+const logoutHandel = () => {
+
+    userLogOut()
+        .then()
+        .catch()
+
+}
+
+
 
 
 
@@ -45,10 +54,10 @@ const nav = <>
 </>
 
 const btn=<>
-<p>{user.email}</p>
+<p>{user?.email}</p>
 <Link to={'/login'}> <button className="btn-pry">SignIn</button></Link>
 <Link to={'/register'}> <button className="btn-pry">SignUp</button></Link>
-<Link to={'/'}> <button className="btn-pry">LogOut</button></Link>
+ <button onClick={logoutHandel} className="btn-pry">LogOut</button>
 </>
     return (
         <div className={` border-b- shadow-md shadow-white  bg-gradient-to-t from-[#00000000] to-[#0000004f]  w-full m-auto" p-0  z-50 fixed  ${visible ? 'top-0 transition-all' : '-top-20 transition-all'} duration-1000`} >
