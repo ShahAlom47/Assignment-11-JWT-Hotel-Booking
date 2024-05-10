@@ -95,7 +95,7 @@ const btn=<>
                    <Link><h1 className="text-lg text-white font-semibold"> <span className="text-2xl text-yellow-600">K</span>ING<span className="text-2xl text-yellow-600">L</span>ION</h1></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 navBar">
                         {nav}
                     </ul>
                 </div>

@@ -7,12 +7,14 @@ const Rooms = () => {
     const axiosSecure = useAxiosSecure()
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [loadingTime, setLoadingTime] = useState(false)
+    const [sortValu, setSortValue] = useState('')
+    const [filterValue, setFilterValue] = useState()
 
     useEffect(() => {
-        axiosSecure.get(('/all-rooms'))
+        axiosSecure.get((`/all-rooms?sort=${sortValu}&filter=${filterValue}`))
             .then(data => setRoomsData(data?.data))
 
-    }, [axiosSecure])
+    }, [axiosSecure, sortValu,filterValue])
 
     function handleMouseOver(index) {
         setHoveredIndex(index);
@@ -22,15 +24,46 @@ const Rooms = () => {
         setHoveredIndex(null);
     }
 
-    console.log(rooms)
+    const handelFilter = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const maxNo = form.max.value
+        const minNo = form.min.value
+        const value = { maxNo, minNo }
+        setFilterValue(value)
+    }
+
+    console.log(filterValue)
     return (
-        <div className="my-16">
-            <div className=" mb-16 flex justify-center">
+        <div className="py-20 bg-[#ceccc9]">
+            <div className=" mb-12 flex justify-center">
                 <h1 className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >Our Available Rooms</h1>
 
             </div>
-            <div className="rooms container  max-w">
-                <div className="">
+            <div className="rooms container  max-w ">
+                <div className="mb-5 flex justify-end">
+                    <div>
+                        <form onSubmit={handelFilter} className="flex gap-4 " >
+
+                            <input className="px-2 rounded-sm w-20 border border-slate-800" type="number" name="min" id="" placeholder="Minimum Price" required />
+
+                            <input className=" border border-slate-800 px-2 rounded-sm w-20" type="number" name="max" id="" placeholder="Maximum Price" required />
+                            <input type="submit" value="Filter" className="btn btn-sm mx-1  text-gray-50  rounded-lg border-none border-b-2 bg-slate-800   " />
+                        </form>
+                    </div>
+
+                    <div className="dropdown dropdown-bottom dropdown-end">
+                        <div
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-sm mx-1 text-gray-50  rounded-lg border-none border-b-2 bg-slate-800  "
+                        >Sort By Price</div>
+                        <ul tabIndex={0} className=" text-gray-50 dropdown-content z-[1] menu px-2 shadow rounded-sm w-52">
+                            <li><a onClick={() => setSortValue('ase')} className={`border-b-2  ${sortValu === 'ase' ? 'bg-slate-600' : 'bg-slate-800'}`}>Hight To Low</a></li>
+                            <li><a onClick={() => setSortValue('dise')} className={`border-b-2  ${sortValu === 'dise' ? 'bg-slate-600' : 'bg-slate-800'}`}>Low To High</a></li>
+                        </ul>
+                    </div>
+
 
                 </div>
                 <div>

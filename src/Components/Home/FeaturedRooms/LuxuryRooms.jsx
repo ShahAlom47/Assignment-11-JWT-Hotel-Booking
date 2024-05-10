@@ -72,7 +72,7 @@ const LuxuryRooms = () => {
             </div>:<> {loadingTime?<div  className="  text-center text-4xl text-gray-600"><p>  Data Empty</p></div>:  <div className=" flex justify-center p-48"><span className="loading loading-dots loading-lg"></span> </div> }   { setTimeout(() => { setLoadingTime(true)}, 4500)}</> 
             }
 <div className="flex justify-center my-7">
-    <Link><button className=" btn btn-ghost bg-gray-900 text-white hover:bg-gray-600">View More Rooms</button></Link>
+    <Link><button className=" btn btn-sm bg-gray-900 text-white hover:bg-gray-600">View More Rooms</button></Link>
 </div>
         </div>
     );
