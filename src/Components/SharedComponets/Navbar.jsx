@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
-    const nav = <>
-        <NavLink><li><a>Home</a></li></NavLink>
-        <NavLink><li><a>Rooms</a></li></NavLink>
-        <NavLink><li><a>My Bookings</a></li></NavLink>
-        <NavLink><li><a>About Us</a></li></NavLink>
-        <NavLink><li><a>Contact Us</a></li></NavLink>
-        
-       
-    </>
+    const {user,userLogOut}=useContext(AuthContext)
+   
 
-    const btn=<>
-   <Link> <button className="btn-pry">LogIn</button></Link>
-   <Link> <button className="btn-pry">SignUp</button></Link>
-   <Link> <button className="btn-pry">LogOut</button></Link>
-    </>
 
 
 const [visible, setVisible] = useState(true);
@@ -42,6 +31,25 @@ useEffect(() => {
 }, [visible]);
 
 
+
+
+
+const nav = <>
+<NavLink><li><a>Home</a></li></NavLink>
+<NavLink><li><a>Rooms</a></li></NavLink>
+<NavLink><li><a>My Bookings</a></li></NavLink>
+<NavLink><li><a>About Us</a></li></NavLink>
+<NavLink><li><a>Contact Us</a></li></NavLink>
+
+
+</>
+
+const btn=<>
+<p>{user.email}</p>
+<Link to={'/login'}> <button className="btn-pry">SignIn</button></Link>
+<Link to={'/register'}> <button className="btn-pry">SignUp</button></Link>
+<Link to={'/'}> <button className="btn-pry">LogOut</button></Link>
+</>
     return (
         <div className={` border-b- shadow-md shadow-white  bg-gradient-to-t from-[#00000000] to-[#0000004f]  w-full m-auto" p-0  z-50 fixed  ${visible ? 'top-0 transition-all' : '-top-20 transition-all'} duration-1000`} >
         

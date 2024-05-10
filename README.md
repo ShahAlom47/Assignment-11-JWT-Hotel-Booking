@@ -11,3 +11,6 @@ Currently, two official plugins are available:
 
 npm i react-lottie  for error animation  https://www.npmjs.com/package/react-lottie
  npm install swiper  banner
+ npm i react-toastify
+npm i react-helmet
+halmet
