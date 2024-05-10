@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../CustomHockes/useAxios";
+import ErrorPage from "../../ErrorPage/ErrorPage";
+import { ImCross } from "react-icons/im";
 
 
 const LuxuryRooms = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [rooms, setRooms] = useState([]);
+    const [loadingTime,setLoadingTime]=useState(false)
 
     const axiosSecure = useAxiosSecure()
 
     useEffect(() => {
-        axiosSecure.get(('/rooms'))
+        axiosSecure.get(('/room'))
             .then(data => setRooms(data?.data))
     }, [axiosSecure])
 
@@ -22,12 +25,22 @@ const LuxuryRooms = () => {
     function handleMouseOut() {
         setHoveredIndex(null);
     }
+
+    // console.log(rooms.length);
+
+    const bg = {
+        backgroundImage: "url('https://i.ibb.co/9nXGtdZ/epty.jpg')",
+    
+      };
+
     return (
         <div className="bg-[#f8f5f0] py-20 my-10">
             <div className=" mb-16">
                 <h1 className="text-center text-3xl " >Luxury Rooms & Suites</h1>
             </div>
-            <div className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
+            {
+               
+               rooms?   <div className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
                 {
                     rooms?.map((data, index) => <div key={data._id}
                      className={`  rounded-lg `}>
@@ -57,7 +70,8 @@ const LuxuryRooms = () => {
 
                 }
 
-            </div>
+            </div>:<> {loadingTime?<div  className="  text-center text-4xl text-gray-600"><p>  Data Empty</p></div>:  <div className=" flex justify-center p-48"><span className="loading loading-dots loading-lg"></span> </div> }   { setTimeout(() => { setLoadingTime(true)}, 4500)}</> 
+            }
 
         </div>
     );
