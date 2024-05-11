@@ -105,7 +105,7 @@ const Rooms = () => {
 
                                             <h1 className="  text-gray-900 font-semibold text-xl">{data.description}</h1>
                                             <h2 className="  font-semibold text-gray-900 ">$ {data.price_per_night} /NIGHT </h2>
-                                            <Link><h1 className="text-gray-100 btn btn-sm bg-gray-800 hover:text-gray-800"> View Review: {data.reviews?.length}</h1></Link>
+                                            {/* <Link><h1 className="text-gray-100 btn btn-sm bg-gray-800 hover:text-gray-800"> View Review: {data.reviews?.length}</h1></Link> */}
 
                                             <Link to={`/room-details/${data._id}`}>   <button className=" btn-active btn absolute bg-gray-700 hover:text-black pr-16 border rounded-l-full -right-2 bottom-4  text-gray-50 p-3">View Details</button></Link>
                                         </div>

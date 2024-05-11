@@ -11,7 +11,7 @@ const RoomDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [roomData, setRoomsData] = useState([]);
-    const [reviewData, setReviewData] = useState([]);
+   
 
     useEffect(() => {
         axiosSecure(`/room/${id}`)
@@ -20,19 +20,10 @@ const RoomDetails = () => {
 
     }, [axiosSecure, id])
 
-    useEffect(() => {
-   if(roomData){
-    axiosSecure(`reviews/${id}`)
-    .then((data) => { setReviewData(data?.data) })
-   }
-
-
-    }, [axiosSecure, id,roomData])
+  
 
 
 
-
-    console.log(reviewData);
 
     const handelBooking = (id) => {
         if (!roomData?.availability) {
