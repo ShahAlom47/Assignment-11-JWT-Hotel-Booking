@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../CustomHockes/useAxios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import ReviewPage from "../Review/ReviewPage";
 
 
 const RoomDetails = () => {
@@ -10,15 +11,28 @@ const RoomDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [roomData, setRoomsData] = useState([]);
+    const [reviewData, setReviewData] = useState([]);
 
     useEffect(() => {
         axiosSecure(`/room/${id}`)
-            .then((data) => { setRoomsData(data.data) })
+            .then((data) => { setRoomsData(data?.data) })
 
 
     }, [axiosSecure, id])
 
-    console.log(roomData);
+    useEffect(() => {
+   if(roomData){
+    axiosSecure(`reviews/${id}`)
+    .then((data) => { setReviewData(data?.data) })
+   }
+
+
+    }, [axiosSecure, id,roomData])
+
+
+
+
+    console.log(reviewData);
 
     const handelBooking = (id) => {
         if (!roomData?.availability) {
@@ -30,6 +44,7 @@ const RoomDetails = () => {
 
 
     }
+
 
 
     return (
@@ -74,6 +89,13 @@ const RoomDetails = () => {
                             <button onClick={() => handelBooking(roomData?._id)} className="btn-sm  btn rounded-sm bg-transparent  border-2 hover:border-black  border-black w-32 hover:text-gray-900"> Book Now</button>
                         </div>
 
+
+                    </div>
+
+                    <div className="reviewSection p-8">
+                    <h1 className="my-3 border-t-2 border-b-2">Reviews</h1>
+
+                        <ReviewPage roomId={roomData._id}></ReviewPage>
                     </div>
 
                 </div>
