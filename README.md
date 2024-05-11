@@ -14,3 +14,4 @@ npm i react-lottie  for error animation  https://www.npmjs.com/package/react-lot
  npm i react-toastify
 npm i react-helmet
 halmet
+npm install sweetalert2
