@@ -18,15 +18,15 @@ const ReviewPage = ({ roomId }) => {
     const minutes= dates.getMinutes()
 
     const time = `${day}/${month+1}/${year} ${hours}:${minutes}`;
-    const userName=user.displayName
-    const photoURL=user.photoURL
+    const userName=user?.displayName
+    const photoURL=user?.photoURL
 
 
     useEffect(() => {
       
          axiosSecure(`reviews/${roomId}`)
          .then((data) => { setReviewData(data?.data) })
-         }, [axiosSecure, roomId,r])
+         }, [axiosSecure, roomId,r,user])
 
          
                                                     

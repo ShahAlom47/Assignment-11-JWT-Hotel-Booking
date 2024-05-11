@@ -46,7 +46,7 @@ const logoutHandel = () => {
 const nav = <>
 <NavLink><li><a>Home</a></li></NavLink>
 <NavLink to={'/rooms'}><li><a>Rooms</a></li></NavLink>
-<NavLink><li><a>My Bookings</a></li></NavLink>
+<NavLink to={'/my-booking'}><li><a>My Bookings</a></li></NavLink>
 <NavLink><li><a>About Us</a></li></NavLink>
 <NavLink><li><a>Contact Us</a></li></NavLink>
 

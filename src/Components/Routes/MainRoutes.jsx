@@ -8,6 +8,7 @@ import Rooms from "../Rooms/Rooms";
 import RoomDetails from "../RoomDetails/RoomDetails";
 import Booking from "../Booking/Booking";
 import PrivetRoute from "./PrivetRoutes";
+import MyBooking from "../MyBooking/MyBooking";
 
 
 
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         {
           path: "/room/booking/:id",
           element:<PrivetRoute><Booking></Booking></PrivetRoute>,
+          
+        },
+        {
+          path: "/my-booking",
+          element:<PrivetRoute><MyBooking></MyBooking></PrivetRoute>,
           
         },
       ],

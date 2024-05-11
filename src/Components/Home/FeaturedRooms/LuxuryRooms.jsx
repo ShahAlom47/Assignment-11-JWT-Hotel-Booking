@@ -30,7 +30,7 @@ const LuxuryRooms = () => {
 
 
     return (
-        <div className="bg-[#f8f5f0] py-20 my-10">
+        <div className="bg-[#f8f5f0] py-20 my-1">
             <div className=" mb-16 flex justify-center">
                 <h1 className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >Luxury Rooms & Suites</h1>
                

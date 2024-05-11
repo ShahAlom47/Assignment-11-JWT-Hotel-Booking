@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../CustomHockes/useAxios";
 
 
 import DatePicker from "react-datepicker";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
 
 const Booking = () => {
+    const navigate =useNavigate()
     const { user } = useContext(AuthContext)
     const { id } = useParams()
     const axiosSecure = useAxiosSecure()
@@ -75,7 +77,12 @@ const Booking = () => {
 
 
         axiosSecure.post('/booking', { formDatas })
-            .then((res) => console.log(res))
+            .then((res) => {
+                toast.success('Booking Confirmed')
+                setTimeout(() => {
+                    navigate('/rooms')
+                }, 1500);
+            })
             .catch(err => console.log(err))
 
         console.log(formDatas);
@@ -91,6 +98,7 @@ const Booking = () => {
 
     return (
         <div className="py-20 bg-[#ceccc9  bg-center bg-cover min-h-screen  " style={{ backgroundImage: `url(${roomData?.image})` }}  >
+            <ToastContainer />
             <div className="max-w flex justify-center"  >
 
 

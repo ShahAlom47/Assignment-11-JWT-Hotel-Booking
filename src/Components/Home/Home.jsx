@@ -10,9 +10,10 @@ const Home = () => {
         <div className="">
            
             <Banner></Banner>
+            <LuxuryRooms></LuxuryRooms>
             {/* <OurLocation></OurLocation> */}
             <Newsletter></Newsletter>
-            <LuxuryRooms></LuxuryRooms>
+           
 
         </div>
     );
