@@ -3,6 +3,7 @@ import useAxiosSecure from "../CustomHockes/useAxios";
 import { Link } from "react-router-dom";
 
 const Rooms = () => {
+
     const [rooms, setRoomsData] = useState([])
     const axiosSecure = useAxiosSecure()
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -15,6 +16,14 @@ const Rooms = () => {
             .then(data => setRoomsData(data?.data))
 
     }, [axiosSecure, sortValu, filterValue])
+
+
+
+
+
+
+
+
 
     function handleMouseOver(index) {
         setHoveredIndex(index);
@@ -33,7 +42,10 @@ const Rooms = () => {
         setFilterValue(value)
     }
 
-    console.log(rooms)
+
+  
+
+
     return (
         <div className="py-20 bg-[#ceccc9]">
             <div className=" mb-12 flex justify-center">
@@ -74,6 +86,7 @@ const Rooms = () => {
                                 rooms?.map((data, index) => <div key={data._id}
                                     className={`  rounded-lg `}>
 
+
                                     <div
                                         onMouseOver={() => handleMouseOver(index)}
                                         onMouseOut={handleMouseOut}
@@ -97,16 +110,13 @@ const Rooms = () => {
                                             }
 
                                         </p>
-                                        {/* <h2 className="card-title mb-8 text-gray-200 font-semibold absolute top-3/4  -left-0 bg-[#000000c3] px-9 py-2 rounded-r-full"
-                              
-                            >{data.description}</h2> */}
+                                       
                                         <div className="p-4 flex  flex-col justify-between items-start w-full relative bg-[#ede442bc]  text-gray-800 "
                                             style={{ transition: 'transform 0.9s ease', transform: hoveredIndex === index ? 'translateY(-100%)' : 'translateY(-0%)' }}>
 
                                             <h1 className="  text-gray-900 font-semibold text-xl">{data.description}</h1>
                                             <h2 className="  font-semibold text-gray-900 ">$ {data.price_per_night} /NIGHT </h2>
-                                            {/* <Link><h1 className="text-gray-100 btn btn-sm bg-gray-800 hover:text-gray-800"> View Review: {data.reviews?.length}</h1></Link> */}
-
+                                            <Link to={`/review/${data._id}`}><button className=' text-gray-700 hover:border-gray-900 btn btn-sm bg-transparent border-none border-b underline '>View Review</button></Link>
                                             <Link to={`/room-details/${data._id}`}>   <button className=" btn-active btn absolute bg-gray-700 hover:text-black pr-16 border rounded-l-full -right-2 bottom-4  text-gray-50 p-3">View Details</button></Link>
                                         </div>
                                     </div>

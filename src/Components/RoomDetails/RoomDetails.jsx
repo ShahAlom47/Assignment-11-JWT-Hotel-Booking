@@ -20,6 +20,8 @@ const RoomDetails = () => {
 
     }, [axiosSecure, id])
 
+
+
   
 
 
@@ -31,10 +33,9 @@ const RoomDetails = () => {
             return
         }
         navigate(`/room/booking/${id}`)
-
-
-
     }
+
+   
 
 
 

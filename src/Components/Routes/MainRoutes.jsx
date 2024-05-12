@@ -9,6 +9,8 @@ import RoomDetails from "../RoomDetails/RoomDetails";
 import Booking from "../Booking/Booking";
 import PrivetRoute from "./PrivetRoutes";
 import MyBooking from "../MyBooking/MyBooking";
+import Review from "../Review/Review";
+import UpdateDate from "../UpdateDate/UpdateDate";
 
 
 
@@ -41,6 +43,11 @@ const router = createBrowserRouter([
           
         },
         {
+          path: "/review/:id",
+          element:<Review></Review>,
+          
+        },
+        {
           path: "/room/booking/:id",
           element:<PrivetRoute><Booking></Booking></PrivetRoute>,
           
@@ -48,6 +55,11 @@ const router = createBrowserRouter([
         {
           path: "/my-booking",
           element:<PrivetRoute><MyBooking></MyBooking></PrivetRoute>,
+          
+        },
+        {
+          path: "/update-date/:id",
+          element:<PrivetRoute><UpdateDate></UpdateDate></PrivetRoute>,
           
         },
       ],

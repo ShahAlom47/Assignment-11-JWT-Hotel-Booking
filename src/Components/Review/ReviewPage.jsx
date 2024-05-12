@@ -77,7 +77,7 @@ const ReviewPage = ({ roomId }) => {
                     reviews?.length > 0 ? <>
                         {
                             reviews.map((data, index) => <div key={index} className='my-3'>
-                                <div className="  flex  items-center gap-4 bg-slate-50 p-2">
+                                <div className="  flex  items-center gap-4 bg-slate-50 rounded-l-full p-2">
                                     <div className="w-10 h-10 rounded-full  ">
                                         {
                                             data?.photoURL ? <><img className='rounded-full w-full h-full' src={data?.photoURL} alt="" /></>
@@ -110,10 +110,10 @@ const ReviewPage = ({ roomId }) => {
             <hr />
 
 
-            <form onSubmit={reviewHandel} className={`flex items-end mt-10 w-full `}>
-                <div className='border-2 flex flex-col w-full' >
-                    <input type="number" name="rating" max={5} min={1} placeholder='Rating' id="" required />
-                    <textarea className='border-t-2 w-full' name="comment" id="" cols="30" rows='4' placeholder='Write your own opinion here' required></textarea>
+            <form onSubmit={reviewHandel} className={`flex items-end mt-10 w-full rounded-md `}>
+                <div className='border-2 flex flex-col w-full ' >
+                    <input type="number" name="rating" className='rounded-t-md pl-4' max={5} min={1} placeholder='Rating' id="" required />
+                    <textarea className='border-t-2 w-full rounded-b-md pl-4' name="comment" id="" cols="30" rows='4' placeholder='Write your own opinion here' required></textarea>
                 </div>
                 <input type="submit" className={`btn-pry  `} value="Review" disabled={isBooked ? false : true} />
 
