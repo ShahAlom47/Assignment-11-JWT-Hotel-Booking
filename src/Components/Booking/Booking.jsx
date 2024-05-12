@@ -38,6 +38,7 @@ const Booking = () => {
         year: 'numeric'
     });
 
+    console.log(arrDate);
 
     useEffect(() => {
         axiosSecure(`/room/${id}`)

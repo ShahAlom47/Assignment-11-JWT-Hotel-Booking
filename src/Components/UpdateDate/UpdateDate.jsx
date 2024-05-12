@@ -50,6 +50,7 @@ const UpdateDate = () => {
                     }, 1500);
 
                 }
+                toast.info('The date has not been changed')
             })
 
 

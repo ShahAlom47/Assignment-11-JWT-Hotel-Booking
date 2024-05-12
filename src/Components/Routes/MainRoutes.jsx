@@ -11,6 +11,7 @@ import PrivetRoute from "./PrivetRoutes";
 import MyBooking from "../MyBooking/MyBooking";
 import Review from "../Review/Review";
 import UpdateDate from "../UpdateDate/UpdateDate";
+import SpacialOffer from "../Home/SpacialOffer/SpacialOffer";
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         {
           path: "/rooms",
           element:<Rooms></Rooms>,
+        },
+        {
+          path: "/spacial-offer",
+          element:<SpacialOffer></SpacialOffer>,
         },
         {
           path: "/room-details/:id",

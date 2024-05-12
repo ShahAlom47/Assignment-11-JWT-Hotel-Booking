@@ -22,9 +22,19 @@ const MyBooking = () => {
 
     const handelCancel = (id, roomId) => {
 
+        const targetedBooking = myBooking.filter(book => book._id === id)
+
+        const bookingDate =targetedBooking[0].arrDate;
+        const providedDateObject = new Date(bookingDate);
+        const currentDateObject = new Date();
+        const oneDay = 24 * 60 * 60 * 1000;
+        const dateDifference = (currentDateObject - providedDateObject) / oneDay;
+
+       
 
 
-        Swal.fire({
+        if (dateDifference >= 1) {
+             Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
             icon: "warning",
@@ -41,7 +51,7 @@ const MyBooking = () => {
                         if (data.data.deletedCount == 1) {
 
                             axiosSecure.post('/rooms/cancel', { roomId })
-                                .then((res) => {
+                                .then(() => {
                                     toast.success('Successfully Cancel Your Booking')
                                     const remainingData = myBooking.filter(data => data.roomId !== id)
                                     setMyBooking(remainingData)
@@ -56,6 +66,15 @@ const MyBooking = () => {
             }
         });
 
+
+        }
+        else {
+
+            toast.error('Sorry, you must cancel at least 1 day in advance. ')
+        }
+
+
+      
 
 
 
