@@ -71,7 +71,7 @@ const Rooms = () => {
                             className="btn btn-sm mx-1 hover:text-gray-900 text-gray-50  rounded-lg border-none border-b-2 bg-slate-800  "
                         >Sort By Price</div>
                         <ul tabIndex={0} className=" text-gray-50 dropdown-content z-[1] menu px-2 shadow rounded-sm w-52">
-                            <li><a onClick={() => setSortValue('ase')} className={`border-b-2  ${sortValu === 'ase' ? 'bg-slate-600' : 'bg-slate-800'}`}>Hight To Low</a></li>
+                            <li><a onClick={() => setSortValue('ase')} className={`border-b-2  ${sortValu === 'ase' ? 'bg-slate-600' : 'bg-slate-800'}`}>Hight To Low</a> </li>
                             <li><a onClick={() => setSortValue('dise')} className={`border-b-2  ${sortValu === 'dise' ? 'bg-slate-600' : 'bg-slate-800'}`}>Low To High</a></li>
                         </ul>
                     </div>

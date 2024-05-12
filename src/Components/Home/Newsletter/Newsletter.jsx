@@ -17,7 +17,7 @@ const Newsletter = () => {
             </div>
             <div className="bg-[#f8f5f073] rounded-l-xl col-span- flex justify-start items-center ">
 
-                <div className="lg:w-8/12 md:w-10/12  py-6 pl-16 max-w-96">
+                <div className="lg:w-8/12 md:w-10/12  py-6 lg:pl-16 p-5 max-w-96">
                     <p className="text-2xl font-semibold my-4">JOIN OUR NEWSLETTER</p>
                     <p className="">Subscribe our newsletter to receive the latest news and exclusive offers every week.</p>
                     <form onSubmit={handelNewsLetter} className=" my-4" >

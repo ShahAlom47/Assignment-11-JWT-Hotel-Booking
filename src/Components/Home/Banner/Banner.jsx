@@ -51,7 +51,7 @@ const Banner = () => {
                             <div className="animate__animated animate__fadeInUp text-center animate__delay-1s  flex flex-col items-center h-full w-full absolute top-1/4 ">
                                 <p className=" uppercase  font-mont text-white"> Unique Place with Comfort Zone</p>
                                 <h1 className='lg:text-4xl uppercase text-2xl font-mont font-bold text-yellow-600 mb-2'>Experience Comfort <br /> at Its Finest </h1>
-                                <Link > <button className=" btn-pry  ">Explore Now</button></Link>
+                                <Link to={'/rooms'} > <button className=" btn-pry  ">Explore Now</button></Link>
                             </div>
 
                         </div>
@@ -65,7 +65,7 @@ const Banner = () => {
                         <div className="animate__animated animate__fadeInUp text-center animate__delay-1s  flex flex-col items-center h-full w-full absolute top-1/4 ">
                                 <p className=" uppercase  font-mont text-white"> Unique Place with Comfort Zone</p>
                                 <h1 className='lg:text-4xl uppercase text-2xl font-mont font-bold text-yellow-600 mb-2'>Your Oasis of <br /> Relaxation Awaits </h1>
-                                <Link > <button className=" btn-pry  ">Explore Now</button></Link>
+                                <Link to={'/rooms'} > <button className=" btn-pry  ">Explore Now</button></Link>
                             </div>
 
                         </div>
@@ -79,7 +79,7 @@ const Banner = () => {
                         <div className="animate__animated animate__fadeInUp animate__delay-1s text-center  flex flex-col items-center h-full w-full absolute top-1/4 ">
                                 <p className=" uppercase  font-mont text-white"> Unique Place with Comfort Zone</p>
                                 <h1 className='lg:text-4xl uppercase text-2xl font-mont font-bold text-yellow-600 mb-2'>Immerse Yourself in <br />Unmatched Hotel Excellence </h1>
-                                <Link > <button className=" btn-pry  ">Explore Now</button></Link>
+                                <Link to={'/rooms'} > <button className=" btn-pry  ">Explore Now</button></Link>
                             </div>
 
                         </div>

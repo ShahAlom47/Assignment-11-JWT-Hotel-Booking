@@ -46,9 +46,9 @@ transition: background-color 0.3s ease;
 
 .btn-active:active{
   transition:  0.4s ease;
-  transform: translateX(12);
+  transform: translateX(4);
 
-right: -10%;
+right: -4%;
 
 }
 
@@ -60,4 +60,10 @@ p{
 .navBar{
   text-shadow: 2px 5px 8px black;
   /* color: #151414; */
+}
+
+
+.slick-arrow, .slick-prev{
+
+  display: none;
 }

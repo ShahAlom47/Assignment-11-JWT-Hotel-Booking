@@ -162,11 +162,9 @@ const Booking = () => {
 
                         <input type="submit" value="Confirm" className=" rounded-md bg-gray-800 w-full my-5 text-white btn hover:text-black font-semibold" />
 
-
-
-
-
                     </form>
+                    <button onClick={() => navigate(-1)} className=" rounded-md text-gray-800 w-full mb-5 bg-white btn hover:text-black font-semibold" >Back</button>
+        
 
                 </div>
 

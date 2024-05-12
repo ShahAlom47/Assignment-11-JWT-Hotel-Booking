@@ -3,6 +3,7 @@ import Banner from "./Banner/Banner";
 import LuxuryRooms from "./FeaturedRooms/LuxuryRooms";
 import Newsletter from "./Newsletter/Newsletter";
 import OurLocation from "./OurLocation/OurLocation";
+import UserReview from "./UserReviewPage/UserReview";
 
 
 const Home = () => {
@@ -11,8 +12,9 @@ const Home = () => {
            
             <Banner></Banner>
             <LuxuryRooms></LuxuryRooms>
-            {/* <OurLocation></OurLocation> */}
+            <OurLocation></OurLocation>
             <Newsletter></Newsletter>
+            <UserReview></UserReview>
            
 
         </div>

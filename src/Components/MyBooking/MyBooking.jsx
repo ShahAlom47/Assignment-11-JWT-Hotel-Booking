@@ -31,7 +31,7 @@ const MyBooking = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Confirm !"
         }).then((result) => {
             if (result.isConfirmed) {
 
@@ -46,8 +46,8 @@ const MyBooking = () => {
                                     const remainingData = myBooking.filter(data => data.roomId !== id)
                                     setMyBooking(remainingData)
                                       Swal.fire({
-                                        title: "Deleted!",
-                                        text: "Your file has been deleted.",
+                                        title: "Canceled!",
+                                        text: "Your file has been canceled.",
                                         icon: "success"
                                       });
                                 }).catch(err => console.log(err))
@@ -87,7 +87,7 @@ const MyBooking = () => {
                             <div className="flex gap-2 mt-3 mx-0">
                                 <Link to={`/room-details/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"> View Details</button></Link>
                                 <Link to={`/update-date/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"><FaRegEdit /> Update Date</button></Link>
-                                <button onClick={() => handelCancel(data._id, data?.roomId)} className="btn btn-sm rounded-sm bg-red-500 text-white border-none "> Cancel</button>
+                                <button onClick={() => handelCancel(data._id, data?.roomId)} className="btn btn-sm rounded-sm bg-red-500 text-white border-none "> Cancel Booking</button>
 
                             </div>
 
