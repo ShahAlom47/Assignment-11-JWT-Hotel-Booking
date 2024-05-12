@@ -46,6 +46,7 @@ const Booking = () => {
     }, [axiosSecure, id])
 
 
+
     const handelForm = (e) => {
         e.preventDefault()
 
@@ -54,9 +55,15 @@ const Booking = () => {
         const name = form.name.value;
         const email = form.email.value;
         const userEmail = user?.email;
+        const roomName= roomData?.description;
+        const roomPhoto= roomData?.image;
+        const roomPrice= roomData?.price_per_night
+        const roomSize= roomData?.room_size
+
+        ;
         const roomId = id
 
-        const bookingData = { name, email, userEmail, arrDate, depDate, pickup, roomId }
+        const bookingData = { name, email, userEmail, arrDate, depDate, pickup, roomId,roomName,roomPhoto,roomPrice,roomSize }
         setFormDatas(bookingData)
 
 
@@ -80,7 +87,7 @@ const Booking = () => {
             .then((res) => {
                 toast.success('Booking Confirmed')
                 setTimeout(() => {
-                    navigate('/rooms')
+                    navigate(`/room-details/${id}`)
                 }, 1500);
             })
             .catch(err => console.log(err))

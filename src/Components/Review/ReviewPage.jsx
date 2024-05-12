@@ -7,29 +7,29 @@ import useAxiosSecure from '../CustomHockes/useAxios';
 
 const ReviewPage = ({ roomId }) => {
     const [reviews, setReviewData] = useState([]);
-    const [r, setRData] = useState([]);
-    const axiosSecure= useAxiosSecure()
+    const [r, setRData] = useState('');
+    const axiosSecure = useAxiosSecure()
     const { user } = useContext(AuthContext);
-    const dates= new Date()
-    const day= dates.getDate()
-    const month= dates.getMonth()
-    const year= dates.getFullYear()
-    const hours= dates.getHours()
-    const minutes= dates.getMinutes()
+    const dates = new Date()
+    const day = dates.getDate()
+    const month = dates.getMonth()
+    const year = dates.getFullYear()
+    const hours = dates.getHours()
+    const minutes = dates.getMinutes()
 
-    const time = `${day}/${month+1}/${year} ${hours}:${minutes}`;
-    const userName=user?.displayName
-    const photoURL=user?.photoURL
+    const time = `${day}/${month + 1}/${year} ${hours}:${minutes}`;
+    const userName = user?.displayName
+    const photoURL = user?.photoURL
 
 
     useEffect(() => {
-      
-         axiosSecure(`reviews/${roomId}`)
-         .then((data) => { setReviewData(data?.data) })
-         }, [axiosSecure, roomId,r,user])
 
-         
-                                                    
+        axiosSecure(`reviews/${roomId}`)
+            .then((data) => { setReviewData(data?.data) })
+    }, [axiosSecure, roomId,  user])
+
+
+
 
 
     const reviewHandel = (e) => {
@@ -37,18 +37,18 @@ const ReviewPage = ({ roomId }) => {
         const form = e.target
         const comment = form.comment.value;
         const rating = form.rating.value;
-        const reviewData={comment,rating,time, userName,roomId,photoURL}
-        
-        setRData(reviewData)
-     
+        const reviewData = { comment, rating, time, userName, roomId, photoURL }
 
-        axiosSecure.post('/review',{reviewData})
-        .then((res)=>form.reset())
-        .catch(err=>console.log(err))
+     
+  
+
+        axiosSecure.post('/review', { reviewData })
+            .then((res) => form.reset())
+            .catch(err => console.log(err))
     }
 
 
-   
+
     return (
 
 
@@ -68,7 +68,8 @@ const ReviewPage = ({ roomId }) => {
                                     <div className=" ">
                                         <div className='flex gap-7'>
                                             <p className='text-lg font-semibold'>{data?.userName}</p>
-                                            <p>Rating: {data?.rating}</p>
+                                            
+                                            <p>{ data.rating&&Array(parseInt(data.rating)).fill().map((_,index)=>  <span key={index}>&#9733;</span>)}</p>
                                         </div>
                                         <div>
                                             <p className='text-xs'>{data?.time}</p>
@@ -88,12 +89,12 @@ const ReviewPage = ({ roomId }) => {
 
             </div>
             <hr />
-         
+
 
             <form onSubmit={reviewHandel} className='flex items-end my-10 w-full'>
                 <div className='border-2 flex flex-col w-full' >
-                    <input type="number" name="rating" max={5} min={1} placeholder='Rating' id="" />
-                    <textarea className='border-t-2 w-full' name="comment" id="" cols="30" rows='4' placeholder='Write your own opinion here'></textarea>
+                    <input type="number" name="rating" max={5} min={1} placeholder='Rating' id="" required />
+                    <textarea className='border-t-2 w-full' name="comment" id="" cols="30" rows='4' placeholder='Write your own opinion here' required></textarea>
                 </div>
                 <input type="submit" className='btn-pry' value="Review" />
 
