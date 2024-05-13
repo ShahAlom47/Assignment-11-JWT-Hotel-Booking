@@ -120,7 +120,7 @@ const Register = () => {
     return (
         <div className=" pt-20  bg-[#37464f]">
               <Helmet>
-                <title>Trek Trove | Register </title>
+                <title>KingLion | Register </title>
             </Helmet>
             <div className=" w-10/12 m-auto py-10  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                 <div className="my-auto">

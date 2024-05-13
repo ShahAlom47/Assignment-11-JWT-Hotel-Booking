@@ -4,6 +4,7 @@ import useAxiosSecure from "../CustomHockes/useAxios";
 import { ToastContainer, toast } from "react-toastify";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import ReviewPage from "../Review/ReviewPage";
+import { Helmet } from "react-helmet";
 
 
 const RoomDetails = () => {
@@ -41,6 +42,9 @@ const RoomDetails = () => {
 
     return (
         <div className="py-20 bg-[#ceccc9]">
+             <Helmet>
+                <title>KingLion |Room Details  </title>
+            </Helmet>
             <div className=" mb-12 flex justify-center">
                 <h1 className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >Details</h1>
             </div>

@@ -1,22 +1,35 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import useAxiosSecure from "../../CustomHockes/useAxios";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import ErrorPage from "../../ErrorPage/ErrorPage";
 
 
 
 const LuxuryRooms = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const [rooms, setRooms] = useState([]);
     const [loadingTime,setLoadingTime]=useState(false)
 
     const axiosSecure = useAxiosSecure()
 
-    useEffect(() => {
-        axiosSecure.get(('/rooms'))
-            .then(data => setRooms(data?.data))
-    }, [axiosSecure])
+    const {data,isLoading, error }=useQuery({
+         queryKey: ['homeRooms'], 
+         queryFn: async ()=>{
+            const response = await axiosSecure.get('/rooms');
+            return response.data
 
-    console.log(rooms);
+         }
+         })
+
+    // useEffect(() => {
+    //     axiosSecure.get(('/rooms'))
+    //         .then(data => setRooms(data?.data))
+    // }, [axiosSecure])
+
+   
+
+
+
 
     function handleMouseOver(index) {
         setHoveredIndex(index);
@@ -26,8 +39,9 @@ const LuxuryRooms = () => {
         setHoveredIndex(null);
     }
 
-    // console.log(rooms.length);
-
+   
+    if (isLoading) return <div className=" flex justify-center p-48"><span className="loading loading-dots loading-lg"></span> </div>;
+    if (error) return <div className="w-10/12 m-auto"> <ErrorPage></ErrorPage></div>;
 
     return (
         <div className="bg-[#f8f5f0] py-20 my-1">
@@ -37,9 +51,9 @@ const LuxuryRooms = () => {
             </div>
             {
                
-               rooms?   <div className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
+               data?   <div className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
                 {
-                    rooms?.map((data, index) => <div key={data._id}
+                    data?.map((data, index) => <div key={data._id}
                      className={`  rounded-lg `}>
 
                         <div

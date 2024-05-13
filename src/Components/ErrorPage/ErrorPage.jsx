@@ -1,4 +1,5 @@
-import { Link, useNavigate, useRouteError } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { useNavigate, useRouteError } from "react-router-dom";
 
 
 export default function ErrorPage() {
@@ -10,7 +11,9 @@ export default function ErrorPage() {
 
     return (
         <div id="error-page" className="w-full  flex flex-col justify-center items-center ">
-        
+         <Helmet>
+                <title>KingLion | Error </title>
+            </Helmet>
 <div className="w-3/6 h-3/6 relative flex flex-col justify-center items-center ">
 <img className="w-3/6 h-3/6" src='https://i.ibb.co/PT02ykL/Pngtree-error-404-page-not-found-6681621.png' alt="" /> 
 
@@ -21,7 +24,7 @@ export default function ErrorPage() {
            <p>
                <i>{error?.statusText || error?.message}</i>
            </p>
-          <button onClick={()=> navigate(-1) } className="btn btn-primary my-3 "> Back To Home</button>
+          <button onClick={()=> navigate('/') } className="btn btn-primary my-3 "> Back To Home</button>
           </div>
 </div>
         

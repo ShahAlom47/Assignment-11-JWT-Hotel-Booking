@@ -58,8 +58,10 @@ const ReviewPage = ({ roomId }) => {
         const rating = form.rating.value;
         const reviewData = { comment, rating, time, userName, roomId, photoURL }
 
+        
+
         axiosSecure.post('/review', { reviewData })
-            .then((res) => {
+            .then(() => {
                 setRdata(reviewData)
                 form.reset()
             })

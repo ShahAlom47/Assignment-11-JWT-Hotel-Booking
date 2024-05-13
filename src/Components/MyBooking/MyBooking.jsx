@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { FaCarSide, FaRegEdit } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const MyBooking = () => {
@@ -84,6 +85,9 @@ const MyBooking = () => {
 
     return (
         <div className="py-20 bg-[#ceccc9] min-h-screen">
+             <Helmet>
+                <title>KingLion | My Booking  </title>
+            </Helmet>
             <ToastContainer></ToastContainer>
             <div className=" mb-12 flex justify-start border-b-2 border-gray-700 ">
                 <h1 className=" text-3xl  max-w-6xl   pb-6 mx-10 block    border-gray-700" >My Booking</h1>

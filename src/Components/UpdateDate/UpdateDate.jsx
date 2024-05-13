@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../CustomHockes/useAxios";
+import { Helmet } from "react-helmet";
 
 
 const UpdateDate = () => {
@@ -50,7 +51,9 @@ const UpdateDate = () => {
                     }, 1500);
 
                 }
-                toast.info('The date has not been changed')
+                else{
+                    toast.info('The date has not been changed')
+                }
             })
 
 
@@ -63,6 +66,9 @@ const UpdateDate = () => {
     return (
         <div className="py-20 bg-[#ceccc9  bg-center bg-cover min-h-screen bg-[#51515a]  "   >
             <ToastContainer />
+            <Helmet>
+                <title>KingLion | Update date </title>
+            </Helmet>
             <div className="max-w flex justify-center"  >
 
 

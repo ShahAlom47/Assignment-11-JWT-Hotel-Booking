@@ -107,7 +107,7 @@ const Login = () => {
     return (
         <div className=" pt-20  bg-[#37464f]">
             <Helmet>
-                <title>Trek Trove | Login</title>
+                <title>KingLion | Login</title>
             </Helmet>
             <div className=" w-10/12 m-auto py-10 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-3">
                 <div className="">

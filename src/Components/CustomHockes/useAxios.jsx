@@ -13,7 +13,7 @@ const axiosSecure = axios.create({
 });
 
 const useAxiosSecure = () => {
-  const { LogOutUser } = useContext(AuthContext)
+  const { userLogOut } = useContext(AuthContext)
   const navigate = useNavigate()
 
 
@@ -25,10 +25,10 @@ const useAxiosSecure = () => {
     },
     
     (error) => {
-      console.log(error.response);
+      console.log(error.response.status);
       if (error.response?.status === 401 || error.response.status === 403) {
 
-        LogOutUser()
+        userLogOut()
           .then(() => {
             navigate('/login')
             //    alert(error.response?.data?.message,)
@@ -44,7 +44,7 @@ const useAxiosSecure = () => {
       return Promise.reject(error);
     }
     );
-  }, [navigate,LogOutUser])
+  }, [navigate,userLogOut])
   return axiosSecure
 };
 

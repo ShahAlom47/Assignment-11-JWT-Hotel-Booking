@@ -6,6 +6,7 @@ import useAxiosSecure from "../CustomHockes/useAxios";
 
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 
 
@@ -85,7 +86,7 @@ const Booking = () => {
 
 
         axiosSecure.post('/booking', { formDatas })
-            .then((res) => {
+            .then(() => {
                 toast.success('Booking Confirmed')
                 setTimeout(() => {
                     navigate(`/room-details/${id}`)
@@ -107,6 +108,9 @@ const Booking = () => {
     return (
         <div className="py-20 bg-[#ceccc9  bg-center bg-cover min-h-screen  " style={{ backgroundImage: `url(${roomData?.image})` }}  >
             <ToastContainer />
+            <Helmet>
+                <title>KingLion | Booking </title>
+            </Helmet>
             <div className="max-w flex justify-center"  >
 
 

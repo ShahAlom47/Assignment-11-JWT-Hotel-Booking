@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import useAxiosSecure from "../CustomHockes/useAxios";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+
 
 const Rooms = () => {
 
@@ -16,6 +19,8 @@ const Rooms = () => {
             .then(data => setRoomsData(data?.data))
 
     }, [axiosSecure, sortValu, filterValue])
+
+  
 
 
 
@@ -48,6 +53,9 @@ const Rooms = () => {
 
     return (
         <div className="py-20 bg-[#ceccc9]">
+             <Helmet>
+                <title>KingLion | Rooms </title>
+            </Helmet>
             <div className=" mb-12 flex justify-center">
                 <h1 className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >Our Available Rooms</h1>
 
