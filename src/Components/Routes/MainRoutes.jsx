@@ -12,6 +12,7 @@ import MyBooking from "../MyBooking/MyBooking";
 import Review from "../Review/Review";
 import UpdateDate from "../UpdateDate/UpdateDate";
 import SpacialOffer from "../Home/SpacialOffer/SpacialOffer";
+import ContactUs from "../ContactUs/ContactUs";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         {
           path: "/rooms",
           element:<Rooms></Rooms>,
+        },
+        {
+          path: "/contact-us",
+          element:<ContactUs></ContactUs>,
         },
         {
           path: "/spacial-offer",

@@ -9,6 +9,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const axiosSecure = axios.create({
   baseURL: 'http://localhost:5000',
+  // baseURL: 'https://assignment-11-jwt-server-flax.vercel.app',
   withCredentials: true,
 });
 

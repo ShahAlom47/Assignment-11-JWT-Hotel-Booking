@@ -5,6 +5,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const {user,userLogOut}=useContext(AuthContext)
+    const [theme, setTheme] = useState(true);
+    const [themData,setThemeData]=useState(null)
    
 
 
@@ -40,7 +42,17 @@ const logoutHandel = () => {
 }
 
 
-// console.log(user);
+useEffect(()=>{
+    const themeData=  localStorage.getItem('theme')
+    document.querySelector('html').setAttribute('data-theme',JSON.parse(themeData) )
+    setThemeData(JSON.parse(themeData))
+},[theme])
+
+const themeControl = () => {      
+    setTheme(!theme)
+theme ?  localStorage.setItem('theme',JSON.stringify('dark')):localStorage.setItem('theme',JSON.stringify('light'))
+
+}
 
 
 const nav = <>
@@ -48,7 +60,18 @@ const nav = <>
 <NavLink to={'/rooms'}><li><a>Rooms</a></li></NavLink>
 <NavLink to={'/my-booking'}><li><a>My Bookings</a></li></NavLink>
 <NavLink><li><a>About Us</a></li></NavLink>
-<NavLink><li><a>Contact Us</a></li></NavLink>
+<NavLink to={'/contact-us'}><li><a>Contact Us</a></li></NavLink>
+
+<label onClick={themeControl} className="flex cursor-pointer gap-2 items-center ml-3">
+
+{
+   themData==='light'? <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
+   
+ :  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    
+}
+
+</label>
 
 
 </>
