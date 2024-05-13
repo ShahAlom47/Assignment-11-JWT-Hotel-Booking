@@ -1,17 +1,27 @@
-# React + Vite
+# KingLion 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Assignment_ID: assignment_category_0004
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+This is a hotel booking management system. It allows users to book rooms, manage reservations,The site is built using HTML, JavaScript, React.js, CSS, and Tailwind CSS framework with the Daisy UI plugin. The server-side is implemented using Express.js and MongoDB, and Firebase is used for authentication.
 
 
+## Live Demo
+Check out the live demo [here](https://assignmet-11-jwt.web.app).
 
-npm i react-lottie  for error animation  https://www.npmjs.com/package/react-lottie
- npm install swiper  banner
- npm i react-toastify
-npm i react-helmet
-halmet
-npm install sweetalert2
+## Features
+- User authentication with JWT token verification
+- Integration with Firebase for real-time data storage
+- Responsive design using Tailwind CSS and Daisy UI
+- Seamless room booking experience with React components
+- Support for MongoDB for data storage
+
+
+
+## Usage
+1. Register for an account
+2. Login with your credentials
+3. Explore available rooms and make a booking
+4. View and manage your reservations
+
+
