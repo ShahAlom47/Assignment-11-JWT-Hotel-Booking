@@ -24,6 +24,8 @@ const Banner = () => {
         document.getElementById('my_modal_3').showModal()
 
     },[])
+  
+
 
 
     return (
@@ -40,6 +42,7 @@ const Banner = () => {
                    <Link to={'/spacial-offer'}> <img className='w-full btn p-0 border-none h-full  ' src="https://i.ibb.co/myWXt0C/offer-big.jpg" alt="" /></Link>
                    
                 </div>
+               
             </dialog>
 
 

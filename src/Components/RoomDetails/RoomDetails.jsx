@@ -76,7 +76,7 @@ const RoomDetails = () => {
                                     : <p className=" "> <span className="text-lg font-semibold">Availability:</span> <span className="bg-yellow-500 p-1 px-2 rounded-sm">Booked</span> </p>
                             }
                         </div>
-                        <div className="card-actions justify-end flex-row items-end">
+                        <div className="card-actions justify-end flex-row items-end mt-3">
                             <button onClick={() => navigate(-1)} className="btn-sm  btn rounded-sm bg-transparent  border-2 hover:border-black  border-black w-32 hover:text-gray-900"> <FaArrowAltCircleLeft /> Back</button>
                             <button onClick={() => handelBooking(roomData?._id)} className="btn-sm  btn rounded-sm bg-transparent  border-2 hover:border-black  border-black w-32 hover:text-gray-900"> Book Now</button>
                         </div>

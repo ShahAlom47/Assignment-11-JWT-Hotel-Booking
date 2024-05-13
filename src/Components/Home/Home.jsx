@@ -7,8 +7,12 @@ import UserReview from "./UserReviewPage/UserReview";
 
 
 const Home = () => {
+    const handelColouse=()=>{
+        const modal = document.getElementById('my_modal_3');
+        modal.close();
+    }
     return (
-        <div className="">
+        <div onClick={handelColouse} className="">
            
             <Banner></Banner>
             <LuxuryRooms></LuxuryRooms>

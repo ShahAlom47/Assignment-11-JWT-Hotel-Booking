@@ -103,7 +103,7 @@ const MyBooking = () => {
                             <p className="text-gray-800"> <span className="text-l font-semibold">Price: </span> <span className="text-xl text-yellow-600">${data?.roomPrice}</span> /NIGHT</p>
                             <p className="text-gray-800"> <span className="text-l font-semibold">Room Size: </span> {data?.roomSize}</p>
                             <p className="text-gray-800 flex items-center gap-3"> <span className="text-l font-semibold ">Free PickUp: </span>  {data?.pickup} <FaCarSide className="text-yellow-800" /></p>
-                            <div className="flex gap-2 mt-3 mx-0">
+                            <div className="flex flex-wrap gap-2 mt-3 mx-0">
                                 <Link to={`/room-details/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"> View Details</button></Link>
                                 <Link to={`/update-date/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"><FaRegEdit /> Update Date</button></Link>
                                 <button onClick={() => handelCancel(data._id, data?.roomId)} className="btn btn-sm rounded-sm bg-red-500 text-white border-none "> Cancel Booking</button>

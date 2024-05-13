@@ -114,7 +114,7 @@ const Booking = () => {
 
                     <h1 className=" text-3xl  border-b-2 pb-4  m-auto  border-gray-900" >Booking</h1>
                     <form onSubmit={handelForm} className="my-5 space-y-4" >
-                        <div className="flex gap-5 justify-center ">
+                        <div className="lg:flex md:flex gap-5 justify-center ">
                             <div>
                                 <label htmlFor="name"> Name <span className="text-red-600">*</span></label>
                                 <input type="text" name="name" id="name" defaultValue={user?.displayName} className="p-1 px-3 rounded-md borden border-b-2 border-black bg-transparent placeholder-gray-900 outline-none" />
@@ -125,12 +125,12 @@ const Booking = () => {
                             </div>
                         </div>
 
-                        <div className="flex gap-5 justify-center ">
-                            <div>
+                        <div className=" md:flex gap-5 justify-center ">
+                            <div className="inline">
                                 <label htmlFor="name"> Arrival Date <span className="text-red-600">*</span></label>
                                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="p-1 px-3 rounded-md borden border-b-2 border-black bg-transparent placeholder-gray-900 outline-none" />
                             </div>
-                            <div>
+                            <div className="inline">
                                 <label htmlFor="email"> Departure Date <span className="text-red-600">*</span></label>
                                 <DatePicker selected={endDate} onChange={(date) => setEndDate(date)} className="p-1 px-3 rounded-md borden border-b-2 border-black bg-transparent placeholder-gray-900 outline-none" />
 
