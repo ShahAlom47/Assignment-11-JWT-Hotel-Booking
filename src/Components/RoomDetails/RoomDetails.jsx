@@ -72,8 +72,8 @@ const RoomDetails = () => {
                         <div className="">
                             <h2 className="card-title text-2xl border-b">{roomData?.description}</h2>
                             <p className="text-gray-500 my-4">{roomData?.details}</p>
-                            <p className="text-gray-800"> <span className="text-lg font-semibold">Price:</span> <span className="text-2xl text-yellow-600">${roomData?.price_per_night}</span> /NIGHT</p>
-                            <p className="text-gray-800"> <span className="text-lg font-semibold">Room Size:</span> ${roomData?.room_size}</p>
+                            <p className="text-gray-700"> <span className="text-lg font-semibold">Price:</span> <span className="text-2xl text-yellow-600">${roomData?.price_per_night}</span> /NIGHT</p>
+                            <p className="text-gray-700"> <span className="text-lg font-semibold">Room Size:</span> ${roomData?.room_size}</p>
                             {
                                 roomData?.availability ?
                                     <p className=" "> <span className="text-lg font-semibold" >Availability:</span> <span className="bg-green-400 p-1 px-2 rounded-sm">Available</span> </p>

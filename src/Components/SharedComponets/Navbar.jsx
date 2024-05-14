@@ -59,7 +59,7 @@ const nav = <>
 <NavLink><li><a>Home</a></li></NavLink>
 <NavLink to={'/rooms'}><li><a>Rooms</a></li></NavLink>
 <NavLink to={'/my-booking'}><li><a>My Bookings</a></li></NavLink>
-<NavLink><li><a>About Us</a></li></NavLink>
+<NavLink to={'/about-us'}><li><a>About Us</a></li></NavLink>
 <NavLink to={'/contact-us'}><li><a>Contact Us</a></li></NavLink>
 
 <label onClick={themeControl} className="flex cursor-pointer gap-2 items-center ml-3">

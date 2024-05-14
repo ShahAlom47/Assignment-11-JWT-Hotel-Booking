@@ -66,8 +66,8 @@ const AuthProvider  = ({children}) => {
 
 
             if(currentUser){
-                axios.post('http://localhost:5000/jwt', userEmail,{withCredentials:true})
-                // axios.post('https://assignment-11-jwt-server-flax.vercel.app/jwt', userEmail,{withCredentials:true})
+                // axios.post('http://localhost:5000/jwt', userEmail,{withCredentials:true})
+                axios.post('https://assignment-11-jwt-server-flax.vercel.app/jwt', userEmail,{withCredentials:true})
                   .then(function (response) {
                     console.log(response.data);
                   })

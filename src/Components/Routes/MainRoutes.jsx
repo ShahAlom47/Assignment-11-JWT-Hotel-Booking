@@ -13,6 +13,7 @@ import Review from "../Review/Review";
 import UpdateDate from "../UpdateDate/UpdateDate";
 import SpacialOffer from "../Home/SpacialOffer/SpacialOffer";
 import ContactUs from "../ContactUs/ContactUs";
+import AboutUs from "../AboutUs/AboutUs";
 
 
 
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         {
           path: "/contact-us",
           element:<ContactUs></ContactUs>,
+        },
+        {
+          path: "/about-us",
+          element:<AboutUs></AboutUs>,
         },
         {
           path: "/spacial-offer",
