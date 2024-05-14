@@ -26,7 +26,7 @@ const useAxiosSecure = () => {
     },
     
     (error) => {
-      console.log(error.response.status);
+      // console.log(error.response.status);
       if (error.response?.status === 401 || error.response.status === 403) {
 
         userLogOut()
@@ -36,8 +36,8 @@ const useAxiosSecure = () => {
 
 
           })
-          .catch((error) => {
-            console.log(error);
+          .catch(() => {
+            // console.log(error);
           });
       }
 

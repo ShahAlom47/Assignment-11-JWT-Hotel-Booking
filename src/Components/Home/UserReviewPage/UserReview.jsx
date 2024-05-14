@@ -21,7 +21,7 @@ const UserReview = () => {
 
 
 
-    console.log(sortValu);
+    // console.log(sortValu);
 
 
 
@@ -61,7 +61,7 @@ const UserReview = () => {
         cssEase: "linear"
     };
 
-    console.log(userReview);
+    // console.log(userReview);
 
     return (
 

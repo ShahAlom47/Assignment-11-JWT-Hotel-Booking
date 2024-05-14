@@ -24,6 +24,7 @@ const ReviewPage = ({ roomId }) => {
     const photoURL = user?.photoURL
 
 
+
     useEffect(() => {
 
         axiosSecure(`reviews/${roomId}`)
@@ -32,21 +33,24 @@ const ReviewPage = ({ roomId }) => {
 
 
     useEffect(() => {
-        axiosSecure.get(`/booking?email=${user?.email}`)
+        if(user){
+            axiosSecure.get(`/booking?email=${user?.email}`)
             .then(data => setMyBooking(data.data))
-            .catch(err => console.log(err))
+            .catch(() =>{})
+        }
     }, [axiosSecure, user,])
 
-    console.log(myBooking);
+    
 
 
     // Found valid users for review
     useEffect(() => {
-        const IsBook = myBooking.find(data => data.roomId === roomId)
+             const IsBook = myBooking.find(data => data.roomId === roomId)
         if (IsBook) {
             setBooked(true)
-        }
-    }, [myBooking, roomId])
+        
+       }
+    }, [myBooking, roomId,user])
 
 
 
@@ -65,7 +69,7 @@ const ReviewPage = ({ roomId }) => {
                 setRdata(reviewData)
                 form.reset()
             })
-            .catch(err => console.log(err))
+            .catch(() =>{})
     }
 
 
@@ -129,5 +133,5 @@ const ReviewPage = ({ roomId }) => {
 
 export default ReviewPage;
 ReviewPage.propTypes = {
-    roomId: PropTypes.object.isRequired
+    roomId: PropTypes.string.isRequired
 };

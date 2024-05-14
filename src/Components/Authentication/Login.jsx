@@ -38,8 +38,8 @@ const Login = () => {
         const email = data.get('email')
         const password = data.get('password')
 
-        const FormDatas = { email, password }
-        console.log(FormDatas);
+        // const FormDatas = { email, password }
+        // console.log(FormDatas);
 
         if (password.length < 6) {
             setErrorMsg('Password must be 6 characters or longer')
@@ -66,7 +66,7 @@ const Login = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 setErrorMsg(errorMessage)
                 toast.error(errorMessage)
 
@@ -82,9 +82,9 @@ const Login = () => {
                 setSuccessMsg('Login Successfully')
                 setTimeout(() => { navigate(location.state ? location.state : '/') }, 1500)
             })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
+            .catch(() => {
+                // const errorMessage = error.message;
+                // console.log(errorMessage);
             });
     }
     const githubLoginHandel = () => {

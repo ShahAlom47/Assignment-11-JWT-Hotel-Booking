@@ -29,3 +29,19 @@ Check out the live demo [here](https://assignmet-11-jwt.web.app).
 5. **Manage Reservations:** View and manage your reservations conveniently.
 
 
+## Dependencies
+
+Here are the dependencies used in this project and their purposes:
+
+- **animate.css**: Provides pre-built CSS animations for adding visual effects to elements in the application.
+- **axios**: Handles HTTP requests for fetching and sending data between the frontend and backend servers.
+- **firebase**: Integrates Firebase services like authentication and real-time database for managing user data and bookings.
+- **framer-motion**: Enables the creation of complex animations and interactive UI components with a simple declarative syntax.
+- **localforage**: Offers asynchronous storage for offline data persistence and caching in the browser.
+- **lottie-react**: Renders Lottie animations, allowing for complex animations with minimal performance overhead.
+- **react-datepicker**: Provides a customizable date picker component for selecting dates in the booking process.
+- **react-icons**: Offers popular icon packs as React components for adding icons to the user interface.
+- **react-lottie**: Another library for rendering Lottie animations in React applications.
+- **react-router-dom**: Manages routing within the application for navigation between different views.
+- **react-toastify**: Displays toast notifications for various actions such as successful bookings or errors.
+

@@ -52,7 +52,7 @@ const Rooms = () => {
 
 
     return (
-        <div className="py-20 bg-[#ceccc9]">
+        <div className="py-20 bg-[#ceccc985]">
              <Helmet>
                 <title>KingLion | Rooms </title>
             </Helmet>

@@ -16,7 +16,7 @@ const MyBooking = () => {
     useEffect(() => {
         axiosSecure.get(`/booking?email=${user?.email}`)
             .then(data => setMyBooking(data.data))
-            .catch(err => console.log(err))
+            // .catch(err => console.log(err))
 
     }, [axiosSecure, user, myBooking])
 
@@ -48,7 +48,7 @@ const MyBooking = () => {
 
                 axiosSecure.delete(`/delete?id=${id}&email=${user?.email}`)
                     .then(data => {
-                        console.log(data.data.deletedCount);
+                        // console.log(data.data.deletedCount);
                         if (data.data.deletedCount == 1) {
 
                             axiosSecure.post('/rooms/cancel', { roomId })
@@ -61,9 +61,9 @@ const MyBooking = () => {
                                         text: "Your file has been canceled.",
                                         icon: "success"
                                       });
-                                }).catch(err => console.log(err))
+                                }).catch(() =>{})
                         }
-                    }).catch(err => console.log(err))
+                    }).catch(() =>{})
             }
         });
 

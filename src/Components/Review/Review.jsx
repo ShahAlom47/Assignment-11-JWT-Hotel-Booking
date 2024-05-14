@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 const Review = () => {
 const {id}=useParams()
 const navigate =useNavigate()
-console.log(id);
+
     return (
         <div className="py-20 bg-[#e9e6e3]">
            <Helmet>

@@ -41,8 +41,8 @@ const Register = () => {
         const photo = data.get('photo')
         const password = data.get('password')
 
-        const FormDatas = { name, email, photo, password }
-        console.log(FormDatas);
+        // const FormDatas = { name, email, photo, password }
+        // console.log(FormDatas);
 
         if (password.length < 6) {
             setErrorMsg('Password must be 6 characters or longer')
@@ -76,7 +76,7 @@ const Register = () => {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 setErrorMsg(errorMessage)
                 toast.error(errorMessage)
 

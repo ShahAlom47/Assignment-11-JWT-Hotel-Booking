@@ -4,8 +4,8 @@ const Newsletter = () => {
     const handelNewsLetter = (e) => {
         e.preventDefault()
         const form =e.target
-        const email =form.email.value
-        console.log(email);
+        // const email =form.email.value
+        // console.log(email);
         form.reset()
     }
     return (

@@ -39,7 +39,7 @@ const Booking = () => {
         year: 'numeric'
     });
 
-    console.log(arrDate);
+    // console.log(arrDate);
 
     useEffect(() => {
         axiosSecure(`/room/${id}`)
@@ -80,7 +80,7 @@ const Booking = () => {
 
     const handelConfirm = () => {
 
-        console.log(formDatas);
+        // console.log(formDatas);
         const modal = document.getElementById('my_modal_5');
         modal.close();
 
@@ -92,13 +92,13 @@ const Booking = () => {
                     navigate(`/room-details/${id}`)
                 }, 1500);
             })
-            .catch(err => console.log(err))
+            .catch(() =>{} )
 
-        console.log(formDatas);
+        // console.log(formDatas);
 
         axiosSecure.post('/rooms/update', { id })
-            .then((res) => console.log(res))
-            .catch(err => console.log(err))
+            .then(() => {})
+            .catch(() => {})
 
     }
 

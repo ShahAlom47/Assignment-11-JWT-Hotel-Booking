@@ -40,7 +40,7 @@ const UpdateDate = () => {
         const bookId = bookingData[0]._id
 
         const formData = { arrDate, depDate, bookId };
-        console.log(formData)
+      
 
         axiosSecure.put(`/update-date?userEmail=${user.email}`, { formData })
             .then(res => {
@@ -61,7 +61,7 @@ const UpdateDate = () => {
     }
 
 
-    console.log(bookingData[0]);
+  
 
     return (
         <div className="py-20 bg-[#ceccc9  bg-center bg-cover min-h-screen bg-[#51515a]  "   >
