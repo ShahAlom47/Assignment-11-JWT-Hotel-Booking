@@ -111,6 +111,7 @@ const MyBooking = () => {
                                 <Link to={`/room-details/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"> View Details</button></Link>
                                 <Link to={`/update-date/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"><FaRegEdit /> Update Date</button></Link>
                                 <button onClick={() => handelCancel(data._id, data?.roomId)} className="btn btn-sm rounded-sm bg-red-500 text-white border-none "> Cancel Booking</button>
+                                <Link to={`/review/${data.roomId}`}><button className=' text-gray-700 hover:border-gray-900 btn btn-sm bg-transparent border-none border-b underline '>Write Review</button></Link>
 
                             </div>
 

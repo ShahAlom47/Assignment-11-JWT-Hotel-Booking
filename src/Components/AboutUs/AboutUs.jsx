@@ -11,9 +11,9 @@ const AboutUs = () => {
                 <h1 className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >About Us</h1>
             </div>
             <div className="max-w ">
-                <div className="p-10 ">
+                <div className="px-10 ">
                    <div className="lg:flex md:flex ">
-                     <div className="flex items-center justify-center lg:w-4/12 md:w-4/12 m-5 rounded-full">
+                     <div className="flex items-center justify-center lg:w-4/12 md:w-4/12 mb-5 rounded-full">
                         <img
                             src="https://i.ibb.co/nR60MHy/king-Logo-photoaidcom-cropped-1.png"
                             alt="About Us"
@@ -31,7 +31,7 @@ const AboutUs = () => {
 
                         </p>
                         <p className="text-lg mb-4">
-                        We are fully dedicated in providing the highest quality experience to each and every one of our guests. Because loyalty is a staple of our commitment and service, we want to pass on the savings to you, in the way of our Extended Perks rewards program. Joining our Extended Perks rewards program is an easy way to access exclusive deals and savings. When you create a profile, you'll get an instant discount on your next booking. Once a member, you'll enjoy discounts at thousands of local and national brands, special promotions, faster booking and much more.
+                        We are fully dedicated in providing the highest quality experience to each and every one of our guests. Because loyalty is a staple of our commitment and service, we want to pass on the savings to you, in the way of our Extended Perks rewards program. Joining our Extended Perks rewards program is an easy way to access exclusive deals and savings. When you create a profile, you`ll get an instant discount on your next booking. Once a member, you`ll enjoy discounts at thousands of local and national brands, special promotions, faster booking and much more.
                         </p>
                     </div>
                 </div>
