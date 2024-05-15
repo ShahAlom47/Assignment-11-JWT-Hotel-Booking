@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 // ..
 AOS.init();
 
@@ -53,6 +54,7 @@ const Rooms = () => {
 
 
   
+  
 
 
     return (
@@ -64,6 +66,9 @@ const Rooms = () => {
                 <h1 data-aos="fade-down" className="text-center text-3xl  border-b-2 pb-6 inline m-auto  border-gray-700" >Our Available Rooms</h1>
 
             </div>
+         
+
+
             <div className="rooms container  max-w ">
                 <div className="mb-5 flex justify-end">
                     <div>
@@ -91,9 +96,12 @@ const Rooms = () => {
 
                 </div>
                 <div>
+                    <div>
+   
+                    </div>
                     {
 
-                        rooms ? <div  className="max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
+                        rooms ? <div  className="z-0 max-w grid gap-5 md:grid-cols-2 lg:grid-cols-2">
                             {
                                 rooms?.map((data, index) => <div key={data._id}
                                 data-aos="zoom-in-up"
