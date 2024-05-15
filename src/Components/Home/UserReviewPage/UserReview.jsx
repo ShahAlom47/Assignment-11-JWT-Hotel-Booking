@@ -69,7 +69,7 @@ const UserReview = () => {
             backgroundImage: "linear-gradient(to left, rgba(74,74,74,0.3), rgb(0 0 0 / 99%)), url('https://i.ibb.co/CJ1fy8G/the-anam-twi-Ic-Isp2s-unsplash-1.jpg')"
         }}>
             <div className="max-w flex justify-end items-center">
-                <div className="Lg:w-10/12 md:w-10/12 w-11/12 flex justify-center items-start flex-col ">
+                <div className="Lg:w-full md:w-full w-11/12 flex justify-start items-start flex-col ">
                     <div className="text-start px-5 lg:pr-7 flex justify-between items-center w-full">
 
                         <h1 className="text-white text-3xl mb-4">What Client`s Say?</h1>
@@ -85,7 +85,7 @@ const UserReview = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-11/12  ">
+                    <div className="w-full  ">
                        
                         {
                             userReview ? <>
@@ -101,13 +101,13 @@ const UserReview = () => {
                                                                 <img className="h-full w-full rounded-full" src={data.photoURL} alt="" />
                                                             </div>
                                                             <div>
-                                                                <h1 className="text-lg text-black  ">{data.userName}</h1>
+                                                                <h1 className="text-lg text-black   ">{data.userName}</h1>
                                                                 <p className=" text-xs ">{data.time}</p>
                                                             </div>
 
                                                         </div>
                                                         <p>{data.rating && Array(parseInt(data.rating)).fill().map((_, index) => <span className="text-xs text-red-700 pl-2" key={index}>&#9733;</span>)}</p>
-                                                        <p className="py-3 text-sm">{data.comment}</p>
+                                                        <p className="py-3 text-sm text-black">{data.comment}</p>
 
                                                     </div>
                                                 </div>

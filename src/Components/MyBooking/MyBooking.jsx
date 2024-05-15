@@ -6,20 +6,27 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { FaCarSide, FaRegEdit } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 const MyBooking = () => {
-    const { user } = useContext(AuthContext)
+    const { user,themesValue } = useContext(AuthContext)
     const [myBooking, setMyBooking] = useState([]);
     const axiosSecure = useAxiosSecure();
+
 
     useEffect(() => {
         axiosSecure.get(`/booking?email=${user?.email}`)
             .then(data => setMyBooking(data.data))
             // .catch(err => console.log(err))
 
-    }, [axiosSecure, user, myBooking])
+    }, [axiosSecure, user, ])
+ 
 
+    console.log(themesValue);
 
     const handelCancel = (id, roomId) => {
 
@@ -31,7 +38,6 @@ const MyBooking = () => {
         const oneDay = 24 * 60 * 60 * 1000;
         const dateDifference = (currentDateObject - providedDateObject) / oneDay;
 
-       
 
 
         if (dateDifference >= 1) {
@@ -84,7 +90,7 @@ const MyBooking = () => {
     }
 
     return (
-        <div className="py-20 bg-[#ceccc9] min-h-screen">
+        <div className="py-20 bg-[#85838125] min-h-screen">
              <Helmet>
                 <title>KingLion | My Booking  </title>
             </Helmet>
@@ -94,22 +100,26 @@ const MyBooking = () => {
             </div>
             <div className="max-w space-y-3 " >
                 {
-                    myBooking.map((data) => <div key={data?._id} className="lg:flex md:flex gap-6 p-4 border-b-2 border-gray-700">
-                        <div className="lg:w-3/12 md:w-3/12">
+                    myBooking.map((data) => <div data-aos="fade-left" key={data?._id} className="lg:flex md:flex gap-6 p-4 border-b-2 border-gray-700">
+                        <div  className="lg:w-3/12 md:w-3/12">
                             <img className="h-full w-full" src={data.roomPhoto} alt="Room Photo" />
                         </div>
-                        <div className="flex-1 text-sm">
+                        <div className="flex-1 text-sm container">
                             <h1 className="text-lg">{data?.roomName}</h1>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Name: </span> {data?.name}</p>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Name: </span> {data?.email}</p>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Departure Date: </span> {data?.depDate}</p>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Arrival Date: </span> {data?.arrDate}</p>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Price: </span> <span className="text-xl text-yellow-600">${data?.roomPrice}</span> /NIGHT</p>
-                            <p className="text-gray-800"> <span className="text-l font-semibold">Room Size: </span> {data?.roomSize}</p>
-                            <p className="text-gray-800 flex items-center gap-3"> <span className="text-l font-semibold ">Free PickUp: </span>  {data?.pickup} <FaCarSide className="text-yellow-800" /></p>
-                            <div className="flex flex-wrap gap-2 mt-3 mx-0">
-                                <Link to={`/room-details/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"> View Details</button></Link>
-                                <Link to={`/update-date/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-900 border-none text-white"><FaRegEdit /> Update Date</button></Link>
+                           
+                           <div className="">
+                           <p className=""> <span className="text-l font-semibold">Name: </span> {data?.name}</p>
+                            <p className=""> <span className="text-l font-semibold">Name: </span> {data?.email}</p>
+                            <p className=""> <span className="text-l font-semibold">Departure Date: </span> {data?.depDate}</p>
+                            <p className=""> <span className="text-l font-semibold">Arrival Date: </span> {data?.arrDate}</p>
+                            <p className=""> <span className="text-l font-semibold">Price: </span> <span className="text-xl text-yellow-600">${data?.roomPrice}</span> /NIGHT</p>
+                            <p className=""> <span className="text-l font-semibold">Room Size: </span> {data?.roomSize}</p>
+                            <p className=" flex items-center gap-3"> <span className="text-l font-semibold ">Free PickUp: </span>  {data?.pickup} <FaCarSide className="text-yellow-800" /></p>
+                          
+                           </div>
+                             <div className="flex flex-wrap gap-2 mt-3 mx-0">
+                                <Link to={`/room-details/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-500 border-none text-white"> View Details</button></Link>
+                                <Link to={`/update-date/${data?.roomId}`}><button className="btn btn-sm rounded-sm bg-gray-900 hover:text-gray-500 border-none text-white"><FaRegEdit /> Update Date</button></Link>
                                 <button onClick={() => handelCancel(data._id, data?.roomId)} className="btn btn-sm rounded-sm bg-red-500 text-white border-none "> Cancel Booking</button>
                                 <Link to={`/review/${data.roomId}`}><button className=' text-gray-700 hover:border-gray-900 btn btn-sm bg-transparent border-none border-b underline '>Write Review</button></Link>
 

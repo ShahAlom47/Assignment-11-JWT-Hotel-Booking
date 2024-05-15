@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const AboutUs = () => {
     return (
-        <div className="py-20 bg-[#ceccc9]">
+        <div className="py-20 bg-[#ceccc95b]">
             <Helmet>
                 <title>KingLion |About Us  </title>
             </Helmet>

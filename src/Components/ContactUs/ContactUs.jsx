@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const ContactUs = () => {
     return (
-        <div className="py-20 bg-[#373636] min-h-screen">
+        <div className="py-20 bg-[#373636b1] min-h-screen">
             <div className="max-w">
 
                 <Helmet>

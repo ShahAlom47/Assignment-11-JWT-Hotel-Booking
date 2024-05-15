@@ -4,7 +4,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
-    const {user,userLogOut}=useContext(AuthContext)
+    const {user,userLogOut,setThemeValue}=useContext(AuthContext)
     const [theme, setTheme] = useState(true);
     const [themData,setThemeData]=useState(null)
    
@@ -46,13 +46,18 @@ useEffect(()=>{
     const themeData=  localStorage.getItem('theme')
     document.querySelector('html').setAttribute('data-theme',JSON.parse(themeData) )
     setThemeData(JSON.parse(themeData))
-},[theme])
+    setThemeValue(themData)
+    
+},[theme,themData,setThemeValue])
 
 const themeControl = () => {      
     setTheme(!theme)
 theme ?  localStorage.setItem('theme',JSON.stringify('dark')):localStorage.setItem('theme',JSON.stringify('light'))
 
+
+
 }
+
 
 
 const nav = <>

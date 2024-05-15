@@ -21,6 +21,8 @@ const AuthProvider  = ({children}) => {
     const [user, setUser] = useState(12345);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
+const [themesValue,setThemeValue]=useState('');
+   
           
     const userRegister=(email,password)=>{
         setLoading(true);
@@ -96,7 +98,7 @@ const AuthProvider  = ({children}) => {
     }, [loading,user])
 
 
-    const AuthInfo={user,userLogin, userRegister, userLogOut, updateUserProfile,updateUserName, githubLogin,googleLogin,loading}
+    const AuthInfo={user,userLogin, userRegister, userLogOut, updateUserProfile,updateUserName, githubLogin,googleLogin,loading,themesValue,setThemeValue}
 
 
     return (
