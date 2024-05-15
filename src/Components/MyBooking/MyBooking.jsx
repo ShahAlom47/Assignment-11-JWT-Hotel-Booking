@@ -33,7 +33,7 @@ const MyBooking = () => {
     }, [axiosSecure, user, ])
  
 
-    console.log(themesValue);
+
 
     const handelCancel = (id, roomId) => {
 

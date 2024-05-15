@@ -5,6 +5,8 @@ import useAxiosSecure from "../CustomHockes/useAxios";
 
 
 import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 

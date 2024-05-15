@@ -6,7 +6,7 @@ import { MdOutlineCancel } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
 const MyBookingTable = ( {data,handelCancel }) => {
-console.log(handelCancel);
+
   
     return (
         <div>

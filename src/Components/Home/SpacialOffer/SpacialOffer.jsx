@@ -1,10 +1,11 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 
 
 
 const SpacialOffer = () => {
+    const navigate= useNavigate()
 
     const settings = {
         customPaging: function (i) {
@@ -71,6 +72,7 @@ const SpacialOffer = () => {
                                 
                              
                             </ul>
+                            <Link ><button onClick={()=>navigate(-1)}  className="btn-sm  btn rounded-sm bg-transparent  border-2 hover:border-black  border-black w-32 hover:text-gray-900 ml-4"> Back</button></Link>
                             <Link to={'/room/booking/663d39e8666ac6d884b714e5'}><button  className="btn-sm  btn rounded-sm bg-transparent  border-2 hover:border-black  border-black w-32 hover:text-gray-900 ml-4"> Book Now</button></Link>
                     
                         </div>
